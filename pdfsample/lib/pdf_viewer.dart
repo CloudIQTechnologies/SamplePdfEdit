@@ -233,14 +233,14 @@ class _PdfViewerState extends State<PdfViewer> {
         // Adding form field for signature
         if (element.text == '[SIGNATURE*]') {
           map.inputType = PdfEditableFields.SIGNATURE;
-          document.form.fields
-              .add(PdfSignatureField(page, eleName, bounds: element.bounds));
+          document.form.fields.add(PdfSignatureField(page, eleName,
+              bounds: element.bounds, backColor: PdfColor(0, 128, 0)));
         }
 
         if (element.text == '[SIGNATURE]') {
           map.inputType = PdfEditableFields.SIGNATURE;
-          document.form.fields
-              .add(PdfSignatureField(page, eleName, bounds: element.bounds));
+          document.form.fields.add(PdfSignatureField(page, eleName,
+              bounds: element.bounds, backColor: PdfColor(0, 128, 0)));
         }
         if (element.text == '[____________]' ||
             element.text == '[________________*]' ||
@@ -261,8 +261,12 @@ class _PdfViewerState extends State<PdfViewer> {
         }
         if (element.text == '[INT]' || element.text == '[INT*]') {
           map.inputType = PdfEditableFields.PHONENO;
-          document.form.fields
-              .add(PdfSignatureField(page, eleName, bounds: element.bounds));
+          document.form.fields.add(PdfSignatureField(
+            page,
+            eleName,
+            bounds: element.bounds,
+            backColor: PdfColor(0, 128, 0),
+          ));
         }
         if (element.text == '[NAME                                        ]' ||
             element.text == '[____________________________*]' ||
